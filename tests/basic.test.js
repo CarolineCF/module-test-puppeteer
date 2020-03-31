@@ -48,7 +48,7 @@ describe("Tests basiques", () => {
         expect(html).toContain("Polr - Campus Annecy")
     }, timeout);
 
-    
+
 
     // cette fonction est lancée avant chaque test de cette
     // série de tests
