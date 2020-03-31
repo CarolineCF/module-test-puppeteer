@@ -35,6 +35,22 @@ describe("Tests basiques", () => {
         expect(html).toContain("powered by Polr 2");
     }, timeout);
 
+    // vérification du chargement de la page sign up
+    test('signup', async () => {
+        // charger la page sign up
+        await page.goto('http://polr.web-74.com/signup');
+        // attendre que l'élément <body> soit chargé
+        await page.waitForSelector('body');
+        // récupérer le contenu de l'élément <body>
+        const html = await page.$eval('body', e => e.innerHTML);
+        // vérifier que dans cet élément Body on trouve "Polr du campus"
+        await page.screenshot({path: './tests/img/signup-page.png'});
+        expect(html).toContain("Polr - Campus Annecy")
+    }, timeout);
+
+
+
+
 
     // cette fonction est lancée avant chaque test de cette
     // série de tests
